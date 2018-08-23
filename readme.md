@@ -22,7 +22,7 @@ npm test
 ```
 
 # Production build
-Generate a build into dist folter with this command:
+Generate a build into dist folder with this command:
 ```
 npm build
 ```
