@@ -75,7 +75,7 @@ export class Form {
     const users = await new Users();
     const user = Array.prototype.reduce.bind(this.inputs)((user, input) => {
       user[input.name] = input.getAttribute('data-mask')
-        ? input.value.replace(/-|\.|\/|\(|\)/g, '')
+        ? input.value.replace(/-|\.|\/|\(|\)| /g, '')
         : input.value;
 
       return user;
