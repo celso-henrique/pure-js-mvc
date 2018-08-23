@@ -26,7 +26,7 @@ export class Form {
     const user = users.find(user => user.cpf === cpf);
 
     if (user) {
-      this.cpf = cpf;
+      this.editingUser = cpf;
       this.submitButton.querySelector('span').innerHTML = 'Alterar';
 
       Object.entries(user).forEach(([key, value]) => {
@@ -81,6 +81,15 @@ export class Form {
       return user;
     }, {});
 
-    users.push(user);
+    if (this.editingUser) {
+      const index = users.map(user => user.cpf).indexOf(this.editingUser);
+      users[index] = user;
+    } else {
+      users.push(user);
+    }
+
+    setTimeout(() => {
+      window.location.hash = '#list';
+    }, 500);
   }
 }
