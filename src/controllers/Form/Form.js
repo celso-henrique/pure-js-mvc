@@ -27,7 +27,7 @@ export class Form {
 
     if (user) {
       this.editingUser = cpf;
-      this.submitButton.querySelector('span').innerHTML = 'Alterar';
+      this.submitButton.querySelector('span').innerHTML = 'Editar';
 
       Object.entries(user).forEach(([key, value]) => {
         const input = Array.prototype.find.bind(this.inputs)(
