@@ -4,7 +4,7 @@ A simple user register app using [Webpack](https://webpack.js.org/) for bundle a
 
 
 # Install
-Clone this repository then install it dependencies with this command:
+Clone this repository and install it dependencies with this command:
 ```
 npm install
 ```
