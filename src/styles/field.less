@@ -1,0 +1,68 @@
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 20px;
+
+  &__label, __input {
+      transition: all 0.2s;
+      touch-action: manipulation;
+  }
+
+  &__label {
+      margin-bottom: 10px;
+      color: @placeholder-color;
+      font-size: 12px;
+      display: block;
+  }
+
+  &__input, &__input-danger {
+      font-size: 16px;
+      padding-bottom: 10px;
+      margin: 0;
+      color: #333;
+      width: 100%;
+      display: block;
+      border: 0;
+      box-shadow: none;
+      border-bottom: 2px solid @border-color;
+
+      &::placeholder {
+        transition: inherit;
+        color: @placeholder-color;
+        opacity: 0;
+      }
+
+      &:focus {
+          outline: 0;
+      }
+
+      &:focus::placeholder {
+          opacity: 1;
+      }
+
+      &:placeholder-shown + label {
+          cursor: text;
+          transform-origin: left bottom;
+          transform: translate(0px, 30px) scale(1.4);
+      }
+
+      &:not(:placeholder-shown) + label,
+      &:focus + label {
+          transform: translate(0px, 0px) scale(1); 
+          cursor: pointer;
+      }
+  }
+
+  &__input-danger {
+      border-bottom: 2px solid @danger;
+  }
+
+  &__message, &__message-danger {
+      margin-top: 5px;
+      font-size: 13px;
+  }
+
+  &__message-danger {
+      color: @danger;
+  }
+}

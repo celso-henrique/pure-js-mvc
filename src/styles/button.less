@@ -1,0 +1,73 @@
+.button, .button__state-loading {
+    width: 100%;
+    outline: 0;
+    margin: 50px 0 0 0;
+    display: block;
+    color: @font-color-inverted;
+    background:  @success;
+    height: 50px;
+    font-size: @font-size;
+    line-height: 50px;
+    border: none;
+    padding: 0;
+    text-align: center;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &[disabled] {
+        cursor: default;
+        background: @disabled-color;
+        color: @disabled-font-color;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.button__state-loading {
+    cursor: default;
+    position: relative;
+
+    span {
+        display: none;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border-radius: 15px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -15px;
+        margin-left: -15px;
+        border: 3px solid transparent;
+        border-bottom-color: @font-color-inverted;
+        border-left-color: @font-color-inverted;
+        animation: rotation 1.3s infinite linear;
+    }
+
+    &[disabled] {
+      color: @font-color-inverted;
+      background:  @success;
+    }
+
+    @keyframes rotation {
+        0% {transform: rotate(0deg) scale(1);}
+        50%   {transform: rotate(180deg) scale(0.8);}
+        100%   {transform: rotate(359deg) scale(1);}
+    }
+}
