@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste Easynvest</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
   </head>
@@ -29,6 +30,41 @@
       </form>
     </template>
 
-    <div id="content"/>
+    <template id="list-template">
+      <div class="container list">
+        <div class="list__row header">
+          <div class="list__col-title">
+            Nome
+          </div>
+          <div class="list__col-title">
+            E-mail
+          </div>
+          <div class="list__col-title">
+            CPF
+          </div>
+          <div class="list__col-title">
+            Telefone
+          </div>
+          <div class="list__col-title">
+            Ações
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="list-row-template">
+      <div class="list__row">
+        <div class="list__col name"></div>
+        <div class="list__col email"></div>
+        <div class="list__col cpf"></div>
+        <div class="list__col phone"></div>
+        <div class="list__col-wrap">
+          <a class="list__button-danger">Excluir</a>
+          <a href="#edit" class="list__button-success">Editar</a>
+        </div>
+      </div>
+    </template>
+
+    <section id="content"/>
   </body>
 </html>

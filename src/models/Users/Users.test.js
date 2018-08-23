@@ -1,5 +1,7 @@
-import 'isomorphic-fetch';
 import {Users} from './Users';
+import {fetchMock} from '../../helpers';
+
+global.fetch = fetchMock;
 
 describe('Users Model Class', async () => {
   afterEach(() => {

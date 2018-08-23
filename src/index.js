@@ -1,6 +1,6 @@
 import './styles/index.less';
 import {Router} from './utils';
-import {Form} from './controllers';
+import {Form, List} from './controllers';
 
 new Router([
   {
@@ -13,5 +13,10 @@ new Router([
     path: 'edit/:cpf',
     template: 'form-template',
     controller: Form
+  },
+  {
+    path: 'list',
+    template: 'list-template',
+    controller: List
   }
 ]);

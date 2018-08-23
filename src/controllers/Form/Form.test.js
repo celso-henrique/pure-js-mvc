@@ -1,5 +1,7 @@
-import 'isomorphic-fetch';
 import {Form} from './Form';
+import {fetchMock} from '../../helpers';
+
+global.fetch = fetchMock;
 
 describe('Form Controller Class', () => {
   beforeEach(() => {
@@ -47,33 +49,29 @@ describe('Form Controller Class', () => {
     expect(button.className).toBe('button__state-loading');
   });
 
-  test(
-    'Expect to update data when receive param and submit',
-    async () => {
-      const form = document.body.querySelector('#form');
-      const input = document.createElement('input');
-      const inputCPF = document.createElement('input');
-      const button = document.createElement('button');
-      const span = document.createElement('span');
+  test('Expect to update data when receive param and submit', async () => {
+    const form = document.body.querySelector('#form');
+    const input = document.createElement('input');
+    const inputCPF = document.createElement('input');
+    const button = document.createElement('button');
+    const span = document.createElement('span');
 
-      inputCPF.name = 'cpf';
-      button.className = 'button';
-      button.appendChild(span);
-      input.name = 'name';
+    inputCPF.name = 'cpf';
+    button.className = 'button';
+    button.appendChild(span);
+    input.name = 'name';
 
-      form.appendChild(button);
-      form.appendChild(input);
+    form.appendChild(button);
+    form.appendChild(input);
 
-      const formController = new Form();
-      await formController.loadData('04080757247');
+    const formController = new Form();
+    await formController.loadData('04080757247');
 
-      input.value = 'test';
+    input.value = 'test';
 
-      await formController.handleSubmit(new Event('submit'));
-      const users = JSON.parse(localStorage.getItem('users'));
+    await formController.handleSubmit(new Event('submit'));
+    const users = JSON.parse(localStorage.getItem('users'));
 
-      expect(users[0].name).toBe('test');
-    },
-    10000
-  );
+    expect(users[0].name).toBe('test');
+  });
 });
