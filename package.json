@@ -1,7 +1,7 @@
 {
-  "name": "easynvest",
+  "name": "Pure JS MVC",
   "version": "1.0.0",
-  "description": "Front-end test for Easynvest.",
+  "description": "A simple user register app using Webpack for bundle and server, Jest for testing, Less and ES6/ES7/ES8.",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
