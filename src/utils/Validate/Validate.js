@@ -6,15 +6,15 @@ export class Validate {
 
   bind() {
     this.inputs.forEach(input => {
-      input.addEventListener('invalid', this.checkValidity.bind(this));
-      input.addEventListener('blur', this.checkValidity.bind(this));
+      input.addEventListener('invalid', this.validateInput.bind(this));
+      input.addEventListener('blur', this.validateInput.bind(this));
       input.addEventListener('input', event => {
-        this.checkValidity(event, false);
+        this.validateInput(event, false);
       });
     });
   }
 
-  checkValidity(event, showMessage = true) {
+  validateInput(event, showMessage = true) {
     const input = event.target;
     const message = input.parentNode.querySelector('.field__message-danger');
 

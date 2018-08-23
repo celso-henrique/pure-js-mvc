@@ -10,7 +10,7 @@ new Router([
     controller: Form
   },
   {
-    path: 'edit/:id',
+    path: 'edit/:cpf',
     template: 'form-template',
     controller: Form
   }

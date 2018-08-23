@@ -5,12 +5,14 @@ export class Users {
 
   async build() {
     const localStorageData = localStorage.getItem('users');
+
     if (!localStorageData) {
       const request = await fetch(
         'https://private-21e8de-rafaellucio.apiary-mock.com/users',
         {method: 'get'}
       );
       const users = await request.json();
+
       this.updateLocalStorage(users);
 
       return this.createProxy(users);

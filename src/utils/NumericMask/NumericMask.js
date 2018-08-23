@@ -7,6 +7,7 @@ export class NumericMask {
   bind() {
     this.inputs.forEach(input => {
       input.addEventListener('input', this.handleKeypress.bind(this));
+      input.dispatchEvent(new Event('input'));
     });
   }
 

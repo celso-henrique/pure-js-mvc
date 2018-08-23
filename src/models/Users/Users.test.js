@@ -31,7 +31,7 @@ describe('Users Model Class', async () => {
     );
   });
 
-  test('Expect to set method update localStorage data', async () => {
+  test('Expect that any changes to users updates localStorage data', async () => {
     const users = await new Users();
 
     users.push('test');

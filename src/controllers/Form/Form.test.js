@@ -46,4 +46,21 @@ describe('Form Controller Class', () => {
 
     expect(button.className).toBe('button__state-loading');
   });
+
+  test('Expect to load data when receive param', async () => {
+    const form = document.body.querySelector('#form');
+    const input = document.createElement('input');
+    const button = document.createElement('button');
+
+    button.className = 'button';
+    input.name = 'name';
+
+    form.appendChild(button);
+    form.appendChild(input);
+
+    const formController = new Form();
+    await formController.loadData('04080757247');
+
+    expect(input.value).toBe('My name 1');
+  });
 });
