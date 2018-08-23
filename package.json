@@ -1,5 +1,5 @@
 {
-  "name": "Pure JS MVC",
+  "name": "PureJSMVC",
   "version": "1.0.0",
   "description": "A simple user register app using Webpack for bundle and server, Jest for testing, Less and ES6/ES7/ES8.",
   "license": "MIT",
