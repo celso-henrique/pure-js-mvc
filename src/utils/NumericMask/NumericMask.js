@@ -21,7 +21,7 @@ export class NumericMask {
   }
 
   applyMask(text, mask) {
-    const cleanValue = text.replace(/-|\.|\/|\(|\)| |[^0-9.]/g, '');
+    const cleanValue = text.replace(/[^0-9]/g, '');
     let result = '';
     let textPosition = 0;
 
