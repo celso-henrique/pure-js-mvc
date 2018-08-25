@@ -24,7 +24,7 @@ npm test
 # Production build
 Generate a build into dist folder with this command:
 ```
-npm build
+npm run build
 ```
 
 ## License
