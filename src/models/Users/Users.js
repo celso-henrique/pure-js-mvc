@@ -34,9 +34,10 @@ export class Users {
   }
 
   set(users, prop, value) {
-    users[prop] = value;
+    const hasSet = Reflect.set(users, prop, value);
+
     this.updateLocalStorage(users);
 
-    return true;
+    return hasSet;
   }
 }
