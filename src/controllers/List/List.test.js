@@ -97,11 +97,10 @@ describe('List Controller Class', () => {
     const list = new List();
     await list.loadData();
 
-    const button = document.querySelector('.list__button-danger');
+    const users = await new Users();
+    users.pop();
 
-    button.dispatchEvent(new Event('click'));
     await list.loadData();
-
     const rows = document.querySelectorAll('.list__row');
 
     expect(rows.length).toBe(2);

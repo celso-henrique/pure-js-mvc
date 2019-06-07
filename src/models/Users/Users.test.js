@@ -3,7 +3,7 @@ import {fetchMock} from '../../helpers';
 
 global.fetch = fetchMock;
 
-describe('Users Model Class', async () => {
+describe('Users Model Class', () => {
   afterEach(() => {
     localStorage.removeItem('users');
   });
