@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: ['core-js/stable', 'regenerator-runtime/runtime',  './src/index.js'],
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
